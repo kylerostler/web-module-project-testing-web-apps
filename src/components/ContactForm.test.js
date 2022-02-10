@@ -3,7 +3,7 @@ import '@testing-library/jest-dom/extend-expect';
 import {getByLabelText, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-// can also use fireEvent instead of userEvent for interacting with inputs and buttons
+// can also use fireEvent instead of userEvent for interacting with inputs and buttons etc
 
 import ContactForm from './ContactForm';
 import { wait } from '@testing-library/user-event/dist/utils';
@@ -13,16 +13,13 @@ const input1 = "four";
 const input2 = "testing";
 const input3 = "a@a.com";
 
-// test('renders without errors', ()=>{
-//     render(<ContactForm/>)
-// });
 
-beforeEach(() => { // before each test mount the app
+beforeEach(() => {
     render(<ContactForm />)
 })
 
-afterEach(() => { // after each test clean up DOM
-    document.body.innerHTML = '' // DOM manipulation
+afterEach(() => {
+    document.body.innerHTML = ''
 })
 
 test('renders the contact form header', ()=> {
